@@ -1,0 +1,17 @@
+package com.bootcamp.StreamAPI.TerminalOperations;
+
+import java.util.stream.Stream;
+
+public class StringBuilder
+{
+    public static void main(String[] args)
+    {
+                Stream<String> list = Stream.of("flower", "game", "pen");
+
+                java.lang.StringBuilder sb = new java.lang.StringBuilder();
+
+                list.forEach(sb::append);
+
+                System.out.println(sb);
+    }
+}
