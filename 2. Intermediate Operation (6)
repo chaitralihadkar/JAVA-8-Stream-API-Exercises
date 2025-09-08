@@ -1,0 +1,19 @@
+package com.bootcamp.StreamAPI.IntermediateOperations;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+public class vowelstartingnames
+{
+    public static void main(String[] args)
+    {
+        List<String> names = Arrays.asList("raju","vivek","aryan","varsha","omkar","esha") ;
+
+        Stream<String> data = names.stream();
+
+        Stream<String> vowelstartingnames = data.filter(n -> n.startsWith("a")||n.startsWith("e")||n.startsWith("i")||n.startsWith("o")||n.startsWith("u"));
+
+        vowelstartingnames.forEach(a -> System.out.println(a));
+    }
+}
