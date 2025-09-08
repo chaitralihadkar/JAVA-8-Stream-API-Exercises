@@ -1,0 +1,20 @@
+package com.bootcamp.StreamAPI.ParallelStreams;
+
+import java.util.List;
+import java.util.stream.LongStream;
+
+public class parallelstream
+{
+    public static void main(String[] args)
+    {
+        List<Long> numbers = LongStream.rangeClosed(1, 1000000)
+                .boxed()
+                .toList();
+
+        long sum = numbers.parallelStream()
+                .mapToLong(Long::longValue)
+                .sum();
+
+        System.out.println(sum);
+    }
+}
