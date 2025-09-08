@@ -1,0 +1,17 @@
+package com.bootcamp.StreamAPI.PrimitiveStream;
+
+import java.util.OptionalDouble;
+import java.util.stream.DoubleStream;
+
+public class Doublestream
+{
+    public static void main(String[] args)
+    {
+        DoubleStream randomvalues = DoubleStream.generate(Math::random)
+                .limit(15);
+
+        OptionalDouble min = randomvalues.min();
+
+        System.out.println(min.orElse(0.0));
+    }
+}
