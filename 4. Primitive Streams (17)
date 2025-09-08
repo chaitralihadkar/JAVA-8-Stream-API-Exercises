@@ -1,0 +1,11 @@
+package com.bootcamp.StreamAPI.PrimitiveStream;
+
+public class IntStream
+{
+    public static void main(String[] args)
+    {
+        java.util.stream.IntStream nums = java.util.stream.IntStream.range(1,10);
+
+        nums.forEach(System.out::println);
+    }
+}
