@@ -1,0 +1,26 @@
+package com.bootcamp.StreamAPI.ParallelStreams;
+
+import java.util.Arrays;
+import java.util.Random;
+
+public class sequentialvsparallelsort
+{
+    public static void main(String[] args)
+    {
+                long starttime, endtime, starttime1, endtime1;
+
+                int size = 10000000;
+                int[] array1 = new Random().ints(size, 0, 100000000).toArray();
+                int[] array2 = Arrays.copyOf(array1, array1.length);
+
+                starttime = System.currentTimeMillis();
+                Arrays.sort(array1);
+                endtime = System.currentTimeMillis();
+                System.out.println((endtime - starttime) + " milliseconds is the execution time of sequential sort");
+
+                starttime1 = System.currentTimeMillis();
+                Arrays.parallelSort(array2);
+                endtime1 = System.currentTimeMillis();
+                System.out.println((endtime1 - starttime1) + " milliseconds is the execution time of parallel sort");
+    }
+}
